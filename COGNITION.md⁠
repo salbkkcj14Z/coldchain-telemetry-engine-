@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CognitiveEmergencePayload",
+  "type": "object",
+  "properties": {
+    "device_id": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "telemetry": {
+      "type": "object",
+      "properties": {
+        "ambient_temp_c": { "type": "number" },
+        "internal_temp_c": { "type": "number" },
+        "compressor_power_kw": { "type": "number" },
+        "door_open": { "type": "boolean" }
+      }
+    },
+    "cognitive_state": {
+      "type": "object",
+      "properties": {
+        "working_memory_hash": { "type": "string" },
+        "adaptation_vector": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "emergence_score": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "cognitive_divergence_dkl": { "type": "number" },
+        "containment_status": {
+          "type": "string",
+          "enum": ["NOMINAL_ADAPTATION", "CONTAINMENT_OVERRIDE", "CONTEXT_RESET"]
+        }
+      },
+      "required": ["working_memory_hash", "emergence_score", "containment_status"]
+    }
+  },
+  "required": ["device_id", "timestamp_utc", "telemetry", "cognitive_state"]
+}
