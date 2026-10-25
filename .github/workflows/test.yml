@@ -23,7 +23,7 @@ jobs:
         import json
         from datetime import datetime
 
-        with open("thermal_trace_schema.json", "r") as f:
+        with open("schemas/thermal_trace_schema.json", "r") as f:
             schema = json.load(f)
 
         with open("tests/mock_telemetry.json", "r") as f:
