@@ -39,7 +39,8 @@ jobs:
         end_time = datetime.now()
         latency_ms = (end_time - start_time).total_seconds() * 1000
 
-        print(f"Schema Validation: PASSED")
+        status = "VERIFIED" if latency_ms < 1.0 else "OPTIMIZED"
+        print("Schema Validation: PASSED")
         print(f"Execution Latency: {latency_ms:.4f} ms")
-        print(f"Zero-Latency Status: {("VERIFIED" if latency_ms < 1.0 else "OPTIMIZED")}")
+        print(f"Zero-Latency Status: {status}")
         '
