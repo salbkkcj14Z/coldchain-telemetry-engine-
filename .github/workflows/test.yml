@@ -2,7 +2,10 @@ name: Thermal Trace Validation
 
 on:
   push:
-    branches: [ "feature/thermal-trace-adapter" ]
+    branches: [ "main", "feature/thermal-trace-adapter" ]
+  pull_request:
+    branches: [ "main" ]
+
 
 jobs:
   validate:
