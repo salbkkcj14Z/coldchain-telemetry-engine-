@@ -1,0 +1,16 @@
+{
+  "shipment_id": "CARGO-REEFER-8821",
+  "timestamp_utc": "2026-10-24T23:10:00Z",
+  "telemetry": {
+    "ambient_temp_c": 3.8,
+    "core_cargo_temp_c": 2.1,
+    "humidity_pct": 88.5,
+    "refrigeration_power_status": "ACTIVE_NOMINAL"
+  },
+  "commercial_reserve": {
+    "working_memory_hash": "a8f3b9c2d1e045f6",
+    "shelf_life_remaining_hours": 142.5,
+    "thermal_integrity_score": 0.96,
+    "containment_status": "NOMINAL_STABILITY"
+  }
+}
