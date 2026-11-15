@@ -1,0 +1,30 @@
+{
+  "transport_id": "LF-TRANSIT-8849",
+  "payload_type": "ORGAN_PERFUSION_CONTAINER",
+  "specimen_code": "KIDNEY-ALLOGRAFT-B4",
+  "timestamp": "2026-11-15T08:52:00Z",
+  "telemetry": {
+    "gps_vector": {
+      "lat": 39.8283,
+      "lon": -74.8215,
+      "altitude_ft": 1420.0
+    },
+    "cabin_barometric_pressure_kpa": 101.3,
+    "g_force_shock": {
+      "x": 0.02,
+      "y": 0.01,
+      "z": 1.01
+    },
+    "perfusion_metrics": {
+      "perfubox_temp_c": 3.2,
+      "flow_rate_ml_min": 45.0,
+      "perfusion_pressure_mmhg": 35.0,
+      "integrity_score": 1.00
+    }
+  },
+  "chain_of_custody": {
+    "current_custodian": "Flight Medic R. Vance",
+    "handoff_verified": true,
+    "hmac_seal": "8f9b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b"
+  }
+}
