@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GreenTruthHorticulturalTelemetry",
+  "type": "object",
+  "properties": {
+    "batch_id": { "type": "string" },
+    "species_code": { "type": "string" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "telemetry": {
+      "type": "object",
+      "properties": {
+        "root_zone_moisture_pct": { "type": "number", "minimum": 0.0, "maximum": 100.0 },
+        "ambient_temp_c": { "type": "number" },
+        "ethylene_ppm": { "type": "number", "minimum": 0.0 },
+        "transit_vibration_g": { "type": "number" }
+      },
+      "required": ["root_zone_moisture_pct", "ambient_temp_c", "ethylene_ppm"]
+    },
+    "commercial_reserve": {
+      "type": "object",
+      "properties": {
+        "plant_viability_index": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "predicted_shrink_risk": { "type": "string", enum: ["LOW", "MODERATE", "CRITICAL"] }
+      },
+      "required": ["plant_viability_index", "predicted_shrink_risk"]
+    }
+  },
+  "required": ["batch_id", "telemetry", "commercial_reserve"]
+}
