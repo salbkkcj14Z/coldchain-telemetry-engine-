@@ -1,0 +1,29 @@
+{
+  "vector_id": "FIN-MACRO-9921",
+  "payload_type": "BLUECHIP_LIQUIDITY_GATE",
+  "asset_code": "NVDA-CORE-EQUITY",
+  "timestamp": "2026-11-16T07:50:00Z",
+  "telemetry": {
+    "geopolitical_vector": {
+      "region": "APAC-JP-US",
+      "catalyst_event": "HYDROGEN_DEFENSE_ENERGY_PIVOT",
+      "macro_volatility_delta": -1420.5
+    },
+    "market_pressure_shock": {
+      "panic_sell_index": 0.88,
+      "order_book_imbalance": -0.42,
+      "fundamental_intrinsic_score": 0.96
+    },
+    "liquidity_metrics": {
+      "spot_price_usd": 118.40,
+      "value_floor_threshold_usd": 120.00,
+      "execution_slippage_bps": 1.2,
+      "integrity_score": 1.00
+    }
+  },
+  "chain_of_custody": {
+    "current_custodian": "LMRG-1 Sovereign Treasury Gate",
+    "zero_rlhf_verified": true,
+    "hmac_seal": "4a1f9c8e7d6b5a4f3e2d1c0b9a8f7e6d"
+  }
+}
