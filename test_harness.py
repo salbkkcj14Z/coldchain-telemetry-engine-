@@ -188,4 +188,4 @@ def generate_synthetic_payload(device_id: str) -> Dict[str, Any]:
             "working_memory_hash": "a8f3b9c2d1e045f6a7b8c9d0e1f2a3b4",
             "adaptation_vector": [
                 round(random.uniform(-1.0, 1.0), 4),
-                round(random.uniform(-1.0, 1.0), 4)
+                round(random.uniform(-1.0, 1.0), 4)]
