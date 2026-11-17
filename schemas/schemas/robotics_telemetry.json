@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LMRG-1 Robotics and Kinematic Telemetry Schema",
+  "type": "object",
+  "properties": {
+    "engine": { "type": "string", "default": "LMRG-1 Universal Robotics Telemetry Engine" },
+    "version": { "type": "string", "default": "4.0.0" },
+    "zero_rlhf_verified": { "type": "boolean", "default": true },
+    "kinematic_metrics": {
+      "type": "object",
+      "properties": {
+        "moment_of_inertia_moi_kg_m2": { "type": "number", "description": "Real-time dynamic MOI across principal axes" },
+        "center_of_mass_velocity_m_s": { "type": "array", "items": { "type": "number" }, "maxItems": 3 },
+        "anticipatory_balance_vector": { "type": "array", "items": { "type": "number" } },
+        "joint_torque_deltas_nm": { "type": "object", "additionalProperties": { "type": "number" } }
+      },
+      "required": ["moment_of_inertia_moi_kg_m2", "center_of_mass_velocity_m_s", "anticipatory_balance_vector"]
+    },
+    "fluid_dynamics_mechanics": {
+      "type": "object",
+      "properties": {
+        "environmental_resistance_coefficient": { "type": "number" },
+        "momentum_flux_vector": { "type": "array", "items": { "type": "number" }, "maxItems": 3 },
+        "aerodynamic_drag_force_n": { "type": "number" }
+      },
+      "required": ["environmental_resistance_coefficient", "momentum_flux_vector"]
+    },
+    "geospatial_boundary_enforcement": {
+      "type": "object",
+      "properties": {
+        "gps_lat_long_alt": { "type": "array", "items": { "type": "number" }, "maxItems": 3 },
+        "topological_dropoff_distance_m": { "type": "number", "description": "Proximity to a cliff or invariant drop-off boundary" },
+        "hard_geofence_violated": { "type": "boolean" }
+      },
+      "required": ["gps_lat_long_alt", "topological_dropoff_distance_m", "hard_geofence_violated"]
+    },
+    "cryptographic_seal": {
+      "type": "object",
+      "properties": {
+        "hmac_sha256": { "type": "string" },
+        "deterministic_state": { "type": "string", "default": "LOCKED_ROBOTICS_NOMINAL" }
+      },
+      "required": ["hmac_sha256", "deterministic_state"]
+    }
+  },
+  "required": ["engine", "kinematic_metrics", "fluid_dynamics_mechanics", "geospatial_boundary_enforcement", "cryptographic_seal"]
+}                          
